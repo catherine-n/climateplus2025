@@ -1,6 +1,9 @@
 # climateplus2025
-----Change logs---\
-(07.22) Created folder structure as below. Make sure to create your own branch first, and then submit a pull requests to merge it into `main` branch\
+--------------------
+**Change log**\
+(07.22) Created folder structure as below. Please git pull first to import. You can create subfolders within the structure as needed.
+(07.22) Make sure to create your own branch first, and then submit a pull requests to merge it into `main` branch
+
 
 ---------------------
 Folder Structure (Draft)
@@ -13,7 +16,7 @@ Folder Structure (Draft)
   - Annotation_checker (docs, code)
   - Confusion_matrix (docs, code)
     
-**2.Models**\
+**2.Models**\ 
 **2.1 YOLO** (data;test/train/val, model, artifacts, evaluation, visualization, docs)\
 **2.2 U-Net** (data;test/train/val, model, artifacts, evaluation, visualization, docs)\
 **2.3 YOLO + U-Net** (model, prediction, evaluation, visualization, docs)
