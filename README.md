@@ -1,7 +1,7 @@
 # climateplus2025
 --------------------
 **Change log**\
-(07.22) Created folder structure as below. Please git pull first to import. You can create subfolders within the structure as needed.
+(07.22) Created folder structure as below. Please git pull first to import. You can create subfolders within the structure as needed.\
 (07.22) Make sure to create your own branch first, and then submit a pull requests to merge it into `main` branch
 
 
