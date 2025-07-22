@@ -1,9 +1,8 @@
-
-
 # climateplus2025
+----Change logs---\
+(07.22) Created folder structure as below. Make sure to create your own branch first, and then submit a pull requests to merge it into `main` branch\
 
-Please make sure creating your own branch first, then do pull requests for merging to main
-
+---------------------
 Folder Structure (Draft)
 
 
