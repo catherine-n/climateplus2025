@@ -13,9 +13,9 @@ Folder Structure (Draft)
   - Confusion_matrix (docs, code)
     
 **2.Models**\
-**2.1 YOLO** (data;test/train/val, model, artifacts, evaluation, visualization)\
-**2.2 U-Net** (data;test/train/val, model, artifacts, evaluation, visualization)\
-**2.3 YOLO + U-Net** (model, prediction, evaluation, visualization)
+**2.1 YOLO** (data;test/train/val, model, artifacts, evaluation, visualization, docs)\
+**2.2 U-Net** (data;test/train/val, model, artifacts, evaluation, visualization, docs)\
+**2.3 YOLO + U-Net** (model, prediction, evaluation, visualization, docs)
 
 **3.Post_processing**
   - model, output (docs, code)
