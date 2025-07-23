@@ -2,9 +2,9 @@ README.md
 
 
 
-# Annotation cheecking and confution matrix 
+# Annotation checking and confusion matrix 
 
-## Step 1 set the input data 
+## Step 1 Set the input data 
 
 Before launching the tool, ensure the following:
 
