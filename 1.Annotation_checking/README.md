@@ -20,7 +20,14 @@ if using the notebook version:
 The GUI will launch and allow you to:
 View original and annotated image tiles--> Apply QC labels via buttons --> Zoom in/out on image tiles -- >Automatically save labels to the .gpkg file. You can inspect the data and labels using DB Browser for SQLite. If any mislabeling is found, open the GeoPackage file in QGIS and manually correct the label based on its unique ID.
 
-
+## Label Name and its discription 
+PV_normal_qc -->	Correct annotation for a PV panel (Glossy, uniform, and neatly arranged in rows)
+PV_heater_qc -->	Solar water heater detected ( Small square-like and has a White rectangular tank attached to it)
+PV_pool_qc --> 	Solar pool heating system (Typically located next to a pool and in a darker shade, Sometimes there is visible piping nearby)
+uncertflag_qc	--> Not confident about the annotation
+delete_qc --> 	Mark for deletion
+resizing_qc	--> Annotation needs resizing
+PV_heater_mat	--> a type of tankless water heater mat 
 
 
 
