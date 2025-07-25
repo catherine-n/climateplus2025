@@ -22,21 +22,24 @@ Before launching the tool, ensure the following:
 
 ##  Step 2 Launch the QC Checker GUI
 
-* Run `checker_final_exe.ipynb`
+**Run `checker_final_exe.ipynb`**
 
-* if using the notebook version:
+if using the notebook version:
   1. Open Annotation_QC_Checker_GUI.ipynb
   2. Run all cells from top to bottom
 
 The GUI will launch and allow you to:
-* View original and annotated image tiles → Apply QC labels via buttons → Zoom in/out on image tiles → Automatically save labels to the `.gpkg` file
-* You can inspect the `.gpkg` file using DB Browser for SQLite.
-* If any mislabeling is found, open the file in QGIS and manually correct the label based on its unique ID.
+* View original and annotated image tiles
+* Apply QC labels via buttons
+* Zoom in/out on image tiles
+* Automatically save labels to the `.gpkg` file
+> * You can inspect the `.gpkg` file using DB Browser for SQLite.
+> * If any mislabeling is found, open the file in QGIS and manually correct the label based on its unique ID.
 
 ## Label Name and its discription 
-* PV_normal_qc → Correct annotation for a PV panel (Glossy, uniform, and neatly arranged in rows)
-* PV_heater_qc → Solar water heater detected ( Small square-like and has a White rectangular tank attached to it)
-* PV_pool_qc → Solar pool heating system (Typically located next to a pool and in a darker shade, Sometimes there is visible piping nearby)
+* PV_normal_qc → Solar panel (Glossy, uniform, and neatly arranged in rows)
+* PV_heater_qc → Solar water heater (Small square-like and has a White rectangular tank attached to it)
+* PV_pool_qc → Solar pool heater (Typically located next to a pool and in a darker shade, Sometimes there is visible piping nearby)
 * uncertflag_qc → Not confident about the annotation
 * delete_qc → Mark for deletion
 * resizing_qc → Annotation needs resizing
