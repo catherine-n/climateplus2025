@@ -1,5 +1,5 @@
-YOLO + U-net is just prediction.
-Folder name will be changed
+* YOLO + U-net is just prediction.
+* Folder name will be changed
 
 To-be-developed
 
