@@ -1,0 +1,10 @@
+
+path: /home/il72/cape_town_year_of_installation/datasets/pv_capetown_after_qc_5K
+train: images/train
+val: images/val
+test: images/test
+
+names:
+  0: PV
+  1: Heater
+  2: Pool_heater
