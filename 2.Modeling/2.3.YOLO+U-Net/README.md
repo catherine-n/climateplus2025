@@ -8,57 +8,52 @@ Furthermore, to assess real-world applicability, the system is designed to estim
 
 
 ----
-## Step 1: Image_selection
+## Step 1: Data Cleaning
 
-Prediction 대상이 될 `.gpkg` 파일을 불러온다. (gpkg 폴더를 참조할 것, 총 15개 이미지 
+* Load the .gpkg files for prediction.
+* Integrate the name_qc column (already QC-verified) into the analysis column.
+* Merge PV_heater and PV_heater_mat into a unified PV_heater label.
+* Save a cleaned .gpkg file.
 
-* `CapeTown_ImageIDs.xlxs`: The list of Aerial Images ID and Annotators
-* `Aerial Imagery`: Cape Town, 12500 * 12500 size, 8cm/pixel (around 55GB for 2023)
+## Step 2: Data Processing
 
-## Step 2: Pre-processing
+* Crop input images into 1024 × 1024 tiles.
+*Generate corresponding Ground Truth labels for performance evaluation. <br>
+(Can be skipped for pure inference-only use cases.)
 
-Load files and clean the data, unify format
+## Step 3: Prediction
 
-* `CRS`: Coordinate Reference System = ESRI:102562
-* `Annotator Lists`: Contains a list of annotated images
-* `Shapefile`: List of anotations
+* Run YOLO on each image tile.
+* Save predictions in JSON format with confidence threshold ≥ 0.5.
+* Optionally save prediction images (frequency adjustable).
 
-## Step 3: Bounding Box extraction
+> * `image_name`: Name of the image patch
+> * `model_type`: YOLO model identifier
+> * `num_prediction`: Number of detected solar objectes
+> * `prediction_id`: Unique IF for each detected object
+> * `class`: Class type - Binary(PV_all) or Multi(Panel, heater, Pool)
+> * `confidence`: Confidence score of the model's prediction
+> * `polygon`: Pixel coordinated of bounding box
 
-* Extract vertices of each aerial image directly from files
-* Match annoatations with aerial imagery
-* Calculate the area of each polygon using its geometry
+## Step 4: Coordinate converting
 
-## Step 4: Annotation Post-processing
+* Compute polygon and centroid.
+* Convert pixel coordinates to spatial coordinates (CRS: ESRI:102562).
 
-* Drop duplicated annotations correponsing to 'geometry' 
-* Merge PV_Pool into PV_pool
-* Ensure binary values '1' or 'Nan' for PV related columns
-* Create a 'PV_normal' column if all other PV related colums are NaN
-* Reorder columns for clarity
-* Drop unnecessary columns (layer, path = '2020 layers')
-* Reindex 'id' for consistency
+## Step 5: Image Cropping for U-Net
 
-## Step 5: Save Dataframe as GPKG
+* From YOLO predictions, crop 320 × 320 images centered on each bounding box.
+* Cropped patches are passed to U-Net for segmentation.
 
-* NOTE: ESRI is not directly readbable in python. Therefore it's safe to use WKT format instead.
+## Step 6 : U-Net Prediction
 
+* Refer to `Step 3` in U-Net `README` for details.
+* Ensure U-Net Ground Truth paths are correctly set for evaluation in `step 7`
 
+## Step 7 : Model evaluaton
 
-* YOLO + U-net is just prediction.
-* Folder name will be changed
-
-To-be-developed
-
-
-README.md
-
----
-
-Cropped images from `4.Extract_images_centroid.ipynb` are fed into U-Net
-
-To continue the prediction based on YOLO output, please refer to Step 3 in the U-Net README."
-
----
----
----
+* Reconstruct a 12,500 × 12,500 image from all U-Net output patches.
+* Use `.csv` metadata from YOLO tiles to aligh with its original location
+* Resize Ground Truth masks to 320 × 320 for patch-level comparison.
+* Use IoU, Precision, and Recall for quantitative evaluation.
+* Optionally visualize using visualization_checker.
