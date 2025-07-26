@@ -1,4 +1,4 @@
-# Modeling : YOLO
+# YOLO
 
 This project implements an object detection model using YOLO (You Only Look Once). The model is trained in two modes:
 
