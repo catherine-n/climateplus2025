@@ -50,7 +50,7 @@ Additionally, the Single-Class training script includes visualization tools for 
   
 ## Step 2: Configuration
 
-* Adjust the `.yaml file to reflect binary classification, with only one class defined.
+* Adjust the `.yaml` file to reflect binary classification, with only one class defined.
 
 ## Step 3,4
 
