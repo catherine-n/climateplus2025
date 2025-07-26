@@ -18,8 +18,6 @@ In both pipelines, the segmentation outputs are combined with geospatial data to
 
 **Test result**
 
-The evaluation was conducted in three districts of Cape Town, with each district covering an area of 1 square kilometer. A ground truth dataset consisting of 337 manually labeled solar panels was used for validation.
-
 The evaluation was conduced in three districts of Cape Town (1 km² per district, ground truth: 337 solar panels). <br>
 In terms of solar panel area capture accuracy :
 * The YOLO + U-Net : 71.2% accuracy.
@@ -27,9 +25,7 @@ In terms of solar panel area capture accuracy :
 
 **Conclusion**
 
-While the development of a streamlined data pipeline is encouraging, the evaluation results are based on **area-level accuracy** measured in **1-square-kilometer grids**, not **object-level detection performance**. 
-
-Although the U-Net model demonstrated strong segmentation capability, several key limitations must be address for the pipeline to be appliced to empiracal research at scale. These include:
+While the development of a streamlined data pipeline is encouraging, the evaluation results are based on **area-level accuracy** measured in **1-square-kilometer grids**, not **object-level detection performance**. To enable its use in large-scale empirical research, several key limitations must be addressed:
 
 * Developing object-level evaluation metrics
 * Enhancing detection and segmentation accuracy at the object level
