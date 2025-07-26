@@ -31,7 +31,7 @@ While the development of a streamlined data pipeline is encouraging, the evaluat
 * Enhancing detection and segmentation accuracy at the object level
 * Improving model robustness across diverse rooftop conditions
 
-_For more informations, see the full project poster: [4.Results/36x42_phdposters_Energy_Transition_July25.pdf](https://github.com/catherine-n/climateplus2025/blob/main/4.Results/36x42_phdposters_Energy_Transition_July25.pdf)_
+_For more informations, see the full project poster: [36x42_Energy_Transition_July25.pdf](https://github.com/user-attachments/files/21447520/36x42_Energy_Transition_July25.pdf)_
 
 ---------------------
 
