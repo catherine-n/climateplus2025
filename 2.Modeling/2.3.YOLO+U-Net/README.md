@@ -53,7 +53,7 @@ Furthermore, to assess real-world applicability, the system is designed to estim
 ## Step 7 : Model evaluaton
 
 * Reconstruct a 12,500 × 12,500 image from all U-Net output patches.
-* Overlapping pixels are resolved by precision priority: Background > Panel > Pool > Heater.
+* **Overlapping pixels are resolved by precision priority: Background > Panel > Pool > Heater.**
 * Use `.csv` metadata from YOLO tiles to aligh with its original location
 * Resize Ground Truth masks to 320 × 320 for patch-level comparison.
 * Use IoU, Precision, and Recall for quantitative evaluation.
