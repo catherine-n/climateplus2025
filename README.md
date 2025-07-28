@@ -31,7 +31,7 @@ While the development of a streamlined data pipeline is promising, the test resu
 * Enhancing detection and segmentation accuracy at the object level
 * Improving model robustness across diverse rooftop conditions
 
-_For more informations, see the full project poster: [36x42_Energy_Transition_July25.pdf](https://github.com/user-attachments/files/21447520/36x42_Energy_Transition_July25.pdf)_
+_For more information, see the full project poster: [36x42_Energy_Transition_July25.pdf](https://github.com/user-attachments/files/21447520/36x42_Energy_Transition_July25.pdf)_
 
 ---------------------
 
