@@ -14,7 +14,7 @@ Two distinct deep learning pipelines were developed to identify and map rooftop 
 * The **second pipeline(orange)** is a **standalone semantic segmentation** model based solely on **U-Net**, utilizing ReNext50 and a Feature Pyramid Network (FPN). It directly segments solar panel area in aerial images through pixel-wise classification.
 <img width="1698" height="406" alt="Image" src="https://github.com/user-attachments/assets/3a279bb8-ea07-45d1-8816-b127175cb848" />
 
-In both pipelines, the segmentation results are post-processed with geospatial data to map rooftop solar panels for subsequent econometric analysis.
+In both pipelines, the segmentation results are post-processed with geospatial data to identify rooftop locations, calculate the area of solar panels, supporting subsequent econometric analysis in related research.
 
 **Test result**
 
