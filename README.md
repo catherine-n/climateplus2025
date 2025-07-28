@@ -4,17 +4,17 @@
 
 This project aims to develop a **computer vision prototype** to detect **rooftop solar energy systems** in Cape Town, South Africa.
 Due to ongoing electricity instability, many households have installed private solar systems to mitigate the impact of load-shedding (scheduled power outages).
-
-This model is expected to support the estimation of the distribution of rooftop solar installations at the household and neighborhood levels. This could provide insights to support empirical research on energy inequality in Cape Town.
+This model estimates the distribution of rooftop solar installations at the neighborhood levels. This could provide insights to support empirical research on energy inequality in Cape Town.
 
 **Modeling**
 
-Two distinct deep learning pipelines were constructed to identify and map rooftop systems such as solar panels, water heaters, and pool heaters. 
-* The **first pipeline(blue)** integrates **YOLOx_11_OBB**(Oriented Bounding Box) for **object detection** with **U-Net** for **pixel-wise segmentation**. YOLOx_11_OBB detects the location and size of each rooftop system, while U-Net further refines the detection by performing detailed semantic segmentation within the detected regions.
-* The **second pipeline(orange)** is a **standalone semantic segmentation** model based solely on **U-Net**, utilizing ReNext50 and a Feature Pyramid Network (FPN). This model directly performs pixel-wise classification of rooftop images to segment solar panel areas with high spatial resolution.
+Two distinct deep learning pipelines were developed to identify and map rooftop systems such as solar panels, water heaters, and pool heaters. 
+* The **first pipeline(blue)** combines **YOLOx_11_OBB**(Oriented Bounding Box) for **object detection** with **U-Net** for **pixel-wise segmentation**. YOLOx_11_OBB localizes each rooftop system, and U-Net refines these detections by classifying pixels.
+
+* The **second pipeline(orange)** is a **standalone semantic segmentation** model based solely on **U-Net**, utilizing ReNext50 and a Feature Pyramid Network (FPN). It directly segments solar panel area in aerial images through pixel-wise classification.
 <img width="1698" height="406" alt="Image" src="https://github.com/user-attachments/assets/3a279bb8-ea07-45d1-8816-b127175cb848" />
 
-In both pipelines, the segmentation outputs are combined with geospatial data to accurately localize rooftop solar systems within a real-world mapping framework, supporting further spatial and socio-economic analysis.
+In both pipelines, the segmentation results are post-processed with geospatial data to map rooftop solar panels for subsequent econometric analysis.
 
 **Test result**
 
@@ -25,7 +25,7 @@ In terms of solar panel area capture accuracy :
 
 **Conclusion**
 
-While the development of a streamlined data pipeline is encouraging, the evaluation results are based on **area-level accuracy** measured in **1-square-kilometer grids**, not **object-level detection performance**. To enable its use in large-scale empirical research, several key limitations must be addressed:
+While the development of a streamlined data pipeline is promising, the test result is based on **area-level accuracy** over 1km² grids rather than object-level performance. To support large-scale empirical research, the following limitations must be addressed:
 
 * Developing object-level evaluation metrics
 * Enhancing detection and segmentation accuracy at the object level
